@@ -1,17 +1,35 @@
-<!doctype html>
-<html>
-<head><title>Gharda Chemicals</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Earth for Farmers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 <body>
-  <h1>Gharda Chemicals Pvt. Ltd.</h1>
-  <h4>Kindly enter your details below</h4>
-  <form action = "/submit" method = "POST">
-    <label for = "name">Enter your Name: </label>
-    <input type = "text" name = "name" id = "name" placeholder = "Ex: Raja"></br>
-    <label for = "number">Enter your Whatsapp Number: </label>
-    <input type = "number" name = "phnumber" id = "phnumber" placeholder = "Enter your Whatsapp Number"></br>
-    <label for = "village">Enter your Village Name: </label>
-    <input type = "text" name = "village" id = "village" placeholder="Ex: Kandukur"></br>
-    <button type = "submit">Submit</button>
-  </form>
+    <header>
+        <h1>Green Earth for Farmers</h1>
+        <p>Together, we can combat desertification and protect our soil.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Our Mission</h2>
+            <p>
+                This platform helps farmers learn sustainable practices,
+                conserve water, and improve soil health.
+            </p>
+        </section>
+
+        <section>
+            <h2>Get Recommendations</h2>
+            <p>Share details about your farm to receive personalized suggestions.</p>
+            <a href="{{ url_for('farm_form') }}">Start Here</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Green Earth for Farmers</p>
+    </footer>
 </body>
 </html>
