@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Farm Details</h1>
+    <p>Enter information about your farm to receive suggestions for preventing desertification.</p>
+
+    <form action="{{ url_for('recommendations') }}" method="POST">
+        <label for="farmer_name">Farmer Name:</label><br>
+        <input type="text" id="farmer_name" name="farmer_name" required><br><br>
+
+        <label for="location">Village/Location:</label><br>
+        <input type="text" id="location" name="location" required><br><br>
+
+        <label for="soil_type">Soil Type:</label><br>
+        <select id="soil_type" name="soil_type" required>
+            <option value="">--Select--</option>
+            <option value="sandy">Sandy</option>
+            <option value="clay">Clay</option>
+            <option value="loam">Loam</option>
+            <option value="silt">Silt</option>
+        </select><br><br>
+
+        <label for="crop">Main Crop:</label><br>
+        <input type="text" id="crop" name="crop" required><br><br>
+
+        <label for="water_source">Primary Water Source:</label><br>
+        <select id="water_source" name="water_source">
+            <option value="rainfall">Rainfall</option>
+            <option value="well">Well</option>
+            <option value="canal">Canal</option>
+            <option value="borewell">Borewell</option>
+        </select><br><br>
+
+        <button type="submit">Get Recommendations</button>
+    </form>
+</body>
+</html>
