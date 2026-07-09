@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Recommendations for {{ farmer_name }}</h1>
+
+    <p><strong>Location:</strong> {{ location }}</p>
+    <p><strong>Soil Type:</strong> {{ soil_type }}</p>
+    <p><strong>Main Crop:</strong> {{ crop }}</p>
+    <p><strong>Water Source:</strong> {{ water_source }}</p>
+
+    <h2>Suggested Practices</h2>
+    <ul>
+        {% for tip in recommendations %}
+            <li>{{ tip }}</li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="{{ url_for('farm_form') }}">Submit another farm profile</a></p>
+</body>
+</html>
